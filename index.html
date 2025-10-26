@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Top Bar Example</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* Top bar style */
+      .top-bar {
+        background-color: #fff;
+        border-bottom: 1px solid #eee;
+        font-size: 0.9rem;
+        padding: 6px 0;
+      }
+      .top-bar i {
+        color: #ff5e14; /* orange color for icons */
+        margin-right: 6px;
+      }
+      .top-bar a {
+        color: #6c757d; /* gray text */
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .top-bar a:hover {
+        color: #ff5e14;
+      }
+      .social-icons {
+        display: flex;
+        align-items: center;
+      }
+
+      .social-icons a {
+        display: flex; /* flex container */
+        align-items: center; /* vertical center */
+        justify-content: center; /* horizontal center */
+        width: 32px;
+        height: 32px;
+        border-radius: 50%; /* make it a circle */
+        background-color: #f0f0f0; /* light gray circle */
+        color: #9b9b9b; /* icon color */
+        margin-left: 8px;
+        transition: all 0.3s ease;
+        font-size: 1rem;
+        text-align: center;
+        line-height: 1; /* keeps icon centered */
+      }
+      .divider {
+        border-left: 1px solid #ddd;
+        height: 14px;
+        margin: 0 10px;
+      }
+
+      .site-header {
+        background: #fff;
+        border-bottom: 1px solid #efefef;
+        padding: 14px 0;
+      }
+
+      /* logo */
+      .site-logo {
+        font-weight: 800;
+        letter-spacing: 1px;
+        font-size: 1.15rem;
+      }
+
+      /* center nav */
+      .main-nav {
+        display: flex;
+        justify-content: center;
+        gap: 28px;
+        margin-left: 600px;
+      }
+      .main-nav a {
+        color: #222;
+        font-weight: 500;
+        text-decoration: none;
+        font-size: 0.95rem;
+        padding: 2px 0;
+        transition: color 0.18s;
+      }
+      .main-nav a:hover {
+        color: #f15b2a;
+      }
+      .main-nav a.active {
+        color: #f15b2a;
+      }
+
+      .cta-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: #1e1e1e;
+        color: #fff;
+        padding: 3px 10px; /* 👈 very tight padding */
+        border-radius: 20px; /* smaller capsule */
+        font-weight: 500;
+        font-size: 0.8rem; /* smaller text */
+        text-decoration: none;
+        border: none;
+        line-height: 1;
+        height: auto;
+      }
+
+      /* Small orange icon circle */
+      .cta-pill .icon-circle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 22px; /* smaller circle */
+        height: 22px;
+        border-radius: 50%;
+        background: #ff6b3b;
+        color: #fff;
+        font-size: 0.75rem;
+        flex-shrink: 0;
+      }
+
+      /* Hover effect */
+      .cta-pill:hover {
+        opacity: 0.9;
+        transition: all 0.2s ease;
+      }
+
+      /* Responsive tweaks */
+      @media (max-width: 767.98px) {
+        .main-nav {
+          gap: 18px;
+          font-size: 0.9rem;
+        }
+        .cta-pill {
+          padding: 3px 8px;
+          font-size: 0.8rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Top Bar Section -->
+    <div class="top-bar">
+      <div class="container d-flex justify-content-between align-items-center">
+        <!-- Left Side -->
+        <div class="d-flex align-items-center">
+          <div class="d-flex align-items-center">
+            <i class="bi bi-envelope-fill"></i>
+            <a href="mailto:info@company.com">info@company.com</a>
+          </div>
+          <div class="divider"></div>
+          <div class="d-flex align-items-center">
+            <i class="bi bi-geo-alt-fill"></i>
+            <span style="color: #6c757d">Sunny Isles Beach, FL 33160</span>
+          </div>
+        </div>
+
+        <!-- Right Side -->
+        <div
+          style="color: white"
+          class="social-icons d-flex align-items-center"
+        >
+          <a href="#"><i style="color: white" class="bi bi-facebook"></i></a>
+          <a href="#"><i style="color: white" class="bi bi-twitter"></i></a>
+          <a href="#"><i style="color: white" class="bi bi-linkedin"></i></a>
+          <a href="#"><i style="color: white" class="bi bi-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+      <div class="container d-flex align-items-center justify-content-between">
+        <!-- LEFT: Logo -->
+        <div class="col-auto p-0">
+          <a href="#" class="site-logo text-dark">VILLA</a>
+        </div>
+
+        <!-- CENTER: Navigation (keeps centered) -->
+        <div class="col d-flex justify-content-center p-0">
+          <nav class="main-nav" role="navigation" aria-label="Primary">
+            <a class="active" href="#">Home</a>
+            <a href="#">Properties</a>
+            <a href="#">Property Details</a>
+            <a href="#">Contact Us</a>
+          </nav>
+        </div>
+
+        <!-- RIGHT: CTA -->
+        <div class="col-auto p-0 d-flex justify-content-end">
+          <a href="#" class="cta-pill">
+            <span class="icon-circle"
+              ><i class="bi bi-calendar-event" style="line-height: 1"></i
+            ></span>
+            <span>Schedule a visit</span>
+          </a>
+        </div>
+      </div>
+    </header>
+  </body>
+</html>
